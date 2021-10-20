@@ -1,0 +1,126 @@
+﻿<link href="~/Content/Style1.css" rel="stylesheet">
+
+@model ObracunZarade.Models.obracunModel
+@using (Html.BeginForm("DodajObracun", "obracun", FormMethod.Post))
+{
+    
+    <div class="form-horizontal">
+
+        <hr />
+       
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ObracunID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="bo">
+                    @Html.DisplayFor(model => model.ObracunID, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Prezime, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Prezime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Prezime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Adresa, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Adresa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Adresa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fondCasova, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fondCasova, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fondCasova, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.osnNetoZarada, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.osnNetoZarada, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.osnNetoZarada, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iznPoreza, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="ip">
+                    @Html.DisplayFor(model => model.iznPoreza, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iznDoprinosaPIO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="IPO">
+                    @Html.DisplayFor(model => model.iznDoprinosaPIO, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iznDoprinosaZaZdrav, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2" id="dzz">
+                    @Html.DisplayFor(model => model.iznDoprinosaZaZdrav, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iznDoprinosaZaNezap, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="nez">
+                    @Html.DisplayFor(model => model.iznDoprinosaZaNezap, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.netoOsnovica, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="nos">
+                    @Html.DisplayFor(model => model.netoOsnovica, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BrutoPlata, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" id="c">
+                    @Html.DisplayFor(model => model.BrutoPlata, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-info" id="Sacuvaj" name="btn" value="Sacuvaj">Sacuvaj</button>
+                    <button type="submit" class="btn btn-info" id="izracunaj" name="btn" value="izracunaj">Izracunaj</button>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="color:green">
+                    @ViewBag.Message
+
+                </div>
+            </div>
+       
+    </div>
+
+}
+
